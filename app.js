@@ -580,7 +580,8 @@
     $modalLink.textContent = `${t('card.visit')}  ·  ${hostnameFor(item.url)}`;
 
     // useful-vscode: 弹窗里也不显示 Install 按钮（与 marketplace 链接重复）
-    $modalDownload.hidden = true;
+    // 用 style.display，因为 .modal-link-btn { display: inline-flex } 会覆盖 [hidden] 默认样式
+    $modalDownload.style.display = 'none';
 
     updateModalFav();
 
