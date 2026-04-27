@@ -2,9 +2,9 @@
 
 精选 VS Code / Cursor / Windsurf 扩展清单 / Curated picks for VS Code / Cursor / Windsurf / 厳選VS Code・Cursor・Windsurf拡張
 
-🌐 **Live site / 在线访问 / オンライン:** https://howcanlove.github.io/useful-vscode/
+🌐 **Live site / 在线访问 / オンライン:** https://vscode.512347.xyz/
 
-[![screenshot](./screenshot.png)](https://howcanlove.github.io/useful-vscode/)
+[![screenshot](./screenshot.png)](https://vscode.512347.xyz/)
 
 > Built from the [useful-catalog-template](https://github.com/HowCanLove/useful-catalog-template). Sister site: [useful-software](https://github.com/HowCanLove/useful-software).
 

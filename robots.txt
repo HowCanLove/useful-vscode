@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://howcanlove.github.io/useful-vscode/sitemap.xml
+Sitemap: https://vscode.512347.xyz/sitemap.xml
