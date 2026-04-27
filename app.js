@@ -456,11 +456,8 @@
     const fav = isFavorite(item);
     const favIcon = fav ? '★' : '☆';
     const favLabel = t(fav ? 'favorites.aria.remove' : 'favorites.aria.add');
-    const dl = downloadInfoFor(item);
-    const dlTitle = t(dl.hasDirect ? 'card.downloadTitle' : 'card.downloadFallbackTitle');
-    const downloadBtn = dl.url
-      ? `<a class="card-link card-download${dl.hasDirect ? '' : ' card-download-fallback'}" href="${escapeHtml(dl.url)}" target="_blank" rel="noopener noreferrer" data-no-modal title="${escapeHtml(dlTitle)}">${t('card.download')}</a>`
-      : '';
+    // useful-vscode: 不渲染 Install 按钮（与"View on Marketplace"指向同一页，重复无意义）
+    const downloadBtn = '';
     return `
       <article class="card" data-idx="${idx}" tabindex="0" role="button" aria-label="${escapeHtml(item.name)}">
         <button class="card-fav${fav ? ' active' : ''}" data-no-modal data-fav-idx="${idx}" aria-pressed="${fav}" aria-label="${escapeHtml(favLabel)}" title="${escapeHtml(favLabel)}">${favIcon}</button>
@@ -582,17 +579,8 @@
     $modalLink.href = item.url;
     $modalLink.textContent = `${t('card.visit')}  ·  ${hostnameFor(item.url)}`;
 
-    const dl = downloadInfoFor(item);
-    if (dl.url) {
-      $modalDownload.href = dl.url;
-      const versionTag = dl.hasDirect && dl.version ? `  ·  ${t('card.version', { v: dl.version })}` : '';
-      $modalDownload.textContent = `${t('card.download')}${versionTag}`;
-      $modalDownload.title = t(dl.hasDirect ? 'card.downloadTitle' : 'card.downloadFallbackTitle');
-      $modalDownload.classList.toggle('modal-download-fallback', !dl.hasDirect);
-      $modalDownload.hidden = false;
-    } else {
-      $modalDownload.hidden = true;
-    }
+    // useful-vscode: 弹窗里也不显示 Install 按钮（与 marketplace 链接重复）
+    $modalDownload.hidden = true;
 
     updateModalFav();
 
